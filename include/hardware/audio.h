@@ -397,18 +397,6 @@ struct audio_stream_out {
     int (*set_callback)(struct audio_stream_out *stream,
             stream_callback_t callback, void *cookie);
 
-#ifdef QCOM_HARDWARE
-    /**
-     * start audio data rendering
-     */
-    int (*start)(struct audio_stream_out *stream);
-
-    /**
-     * stop audio data rendering
-     */
-    int (*stop)(struct audio_stream_out *stream);
-#endif
-
     /**
      * Notifies to the audio driver to stop playback however the queued buffers are
      * retained by the hardware. Useful for implementing pause/resume. Empty implementation
